@@ -1,0 +1,22 @@
+﻿@model List<SisEventos.Models.Evento>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Acompanhe os últimos eventos!</h1>
+    <p>Participe dos eventos abaixo!</p>
+</div>
+
+<div class="row">
+    @foreach (Evento evento in Model)
+    {
+        <div class="col-md-4 evento">
+            <img src="@evento.CaminhoImagem" />
+            <h3>@evento.Nome</h3>
+            <p>@evento.Descricao</p>
+        </div>
+    }
+
+</div>

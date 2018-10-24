@@ -1,0 +1,30 @@
+﻿@model List<SisEventos.Models.Curso>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Eventos</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Nome</td>
+            <td>Descrição</td>
+           
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (Curso curso in Model)
+        {
+            <tr>
+                <td>@curso.Id</td>
+                <td>@curso.Nome</td>
+                <td>@curso.Descricao</td>
+                
+            </tr>
+        }
+    </tbody>
+    
+</table>

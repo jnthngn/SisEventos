@@ -1,0 +1,16 @@
+﻿@model SisEventos.Models.Evento
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h2>Evento</h2>
+
+<div class="evento-detail">
+    <h1>@Model.Nome</h1>
+    <h3>Curso: @Model.Curso.Nome</h3>
+
+    <p>@Model.Descricao</p>
+
+    <img src="@Model.CaminhoImagem" />
+</div>
+

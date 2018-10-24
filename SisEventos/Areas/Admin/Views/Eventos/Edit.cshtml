@@ -1,0 +1,61 @@
+﻿@model SisEventos.ViewModels.EventoVM
+
+@{
+    ViewData["Title"] = "Alteração de Evento";
+}
+
+<h1>Alteração de Evento</h1>
+
+<div class="row">
+    <form asp-controller="Eventos"
+          asp-action="Edit"
+          enctype="multipart/form-data"
+          method="post"
+          class="form-horizontal">
+        <div class="form-group">
+            <label class="col-sm-2 control-label" asp-for="Nome"></label>
+            <div class="col-sm-10">
+                <input class="form-control" asp-for="Nome" />
+                <small class="text-danger" asp-validation-for="Nome"></small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label" asp-for="Descricao"></label>
+            <div class="col-sm-10">
+                <input class="form-control" asp-for="Descricao" />
+                <small class="text-danger" asp-validation-for="Descricao"></small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label" asp-for="Imagem"></label>
+            <div class="col-sm-10">
+                <input class="form-control" asp-for="Imagem" />
+                <small class="text-danger" asp-validation-for="Imagem"></small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label" asp-for="IdCursoSelecionado"></label>
+            <div class="col-sm-10">
+                <select class="form-control" asp-for="IdCursoSelecionado" asp-items="Model.Cursos">
+                    <option value="">Selecione uma opção</option>
+                </select>
+                <small class="text-danger" asp-validation-for="IdCursoSelecionado"></small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <a asp-area="Admin"
+                   asp-controller="Eventos"
+                   asp-action="Index"
+                   class="btn btn-default">Cancelar</a>
+                <button type="submit"
+                        class="btn btn-success">
+                    Salvar
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
